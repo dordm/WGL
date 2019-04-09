@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+.fontStyle1 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: #586782 !important;
+}
+
+.fontStyle2 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    color: #a4afbf !important;
+}
+
+.fontStyle3 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    color: #0e1f42 !important;
+}
+.fontStyle4 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: #687383 !important;
+}
+.fontStyle5 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    color: #182d5a !important;
+}
+
+.fontStyle6 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: #4c84ff !important;
+}
+
+.fontStyle7 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    color: #586782 !important;
+}
+
+.fontStyle8 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    color: #687383 !important;
+}
+
+.fontStyle9 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    color: #06132a !important;
+}
+
+.fontStyle10 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    color: #172b51 !important;
+}
+
+.fontStyle11 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    color: #586782 !important;
+}
+
+.fontStyle12 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 10px !important;
+    color: #a1aec6 !important;
+}
+
+.fontStyle13 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 40px !important;
+    color: #172b51 !important;
+}
+
+.fontStyle14 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    color: #ffffff !important;
+}
+
+.fontStyle15 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: #ffffff !important;
+}
+
+.fontStyle16 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 10px !important;
+    color: #182d5a !important;
+}
+
+.fontStyle17 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 40px !important;
+    color: #4c84ff !important;
+}
+
+.fontStyle18 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 40px !important;
+    color: #a1aec6 !important;
+}
+
+.fontStyle19 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    color: #182d5a !important;
+}
+
+.fontStyle20 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    color: #a4afbf !important;
+}
+
+.fontStyle21 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 30px !important;
+    color: #182d5a !important;
+}
+
+.fontStyle22 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    color: #4c84ff !important;
+}
+
+.fontStyle23 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: #ff0000 !important;
+}
+
+.fontStyle24 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    color: #182d5a !important;
+}
+
+.fontStyle25 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: #2fd565 !important;
+}
+
+.fontStyle26 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    color: #000000 !important;
+}
+
+.fontStyle27 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    color: #06132a !important;
+}
+
+.fontStyle28 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    color: #ffffff !important;
+}
+
+.fontStyle29 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    color: #0e1f42 !important;
+}
+
+.fontStyle30 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    color: #ff0000 !important;
+}
+
+.fontStyle31 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 22px !important;
+    color: #ffffff !important;
+}
+
+.fontStyle32 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 22px !important;
+    color: #182d5a !important;
+}
+
+.fontStyle33 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 30px !important;
+}
+
+.fontStyle34 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    color: #182d5a !important;
+}
+
+.fontStyle35 {
+    font-family: Arial !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    color: #2fd565 !important;
+}
