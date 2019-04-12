@@ -6,12 +6,10 @@ import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -23,6 +21,11 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import Input from "@material-ui/core/Input";
 import langConf from "../js/lang";
+import InvoiceIcon from "@material-ui/icons/Receipt";
+import ReceiveIcon from "@material-ui/icons/Archive";
+import ClientsIcon from "@material-ui/icons/Contacts";
+import SuppliersIcon from "@material-ui/icons/GroupWork";
+import { Link } from "react-router-dom";
 
 const Logo = styled.img`
   height: 50px;
@@ -76,19 +79,36 @@ const styles = theme => ({
 });
 
 class NavBar extends React.Component {
-  state = {
-    mobileOpen: false,
-    lang: "hebrew",
-    langObj: langConf["hebrew"]
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      mobileOpen: false,
+      lang: "hebrew",
+      screen: ""
+    };
+  }
+
+  componentDidMount() {
+    this.setScreen(this.state.lang);
+  }
+
+  setScreen(lang) {
+    if (window.location.pathname.includes("/sentInvoices"))
+      this.setState({ screen: langConf[lang].sentInvoices });
+    else if (window.location.pathname.includes("/receivedInvoices"))
+      this.setState({ screen: langConf[lang].receivedInvoices });
+    else if (window.location.pathname.includes("/clients"))
+      this.setState({ screen: langConf[lang].myClients });
+    else this.setState({ screen: langConf[lang].mySuppliers });
+  }
 
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
 
   render() {
-    const { classes, width } = this.props;
-    const { lang } = this.state;
+    const { classes, width, data } = this.props;
+    const { lang, screen } = this.state;
 
     const drawer = (
       <div>
@@ -107,22 +127,71 @@ class NavBar extends React.Component {
         </div>
         <Divider />
         <List style={{ direction: langConf[lang].direction }}>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText
-                style={{ textAlign: langConf[lang].right }}
-                primary={text}
-              />
-            </ListItem>
-          ))}
+          <ListItem
+            onClick={() =>
+              this.setState({ screen: langConf[lang].mySuppliers })
+            }
+            component={Link}
+            to={"/suppliers"}
+            button
+          >
+            <ListItemIcon>
+              <SuppliersIcon />
+            </ListItemIcon>
+            <ListItemText
+              style={{ textAlign: langConf[lang].right }}
+              primary={langConf[lang].mySuppliers}
+            />
+          </ListItem>
+          <ListItem
+            onClick={() =>
+              this.setState({ screen: langConf[lang].receivedInvoices })
+            }
+            component={Link}
+            to={"/receivedInvoices"}
+            button
+          >
+            <ListItemIcon>
+              <ReceiveIcon />
+            </ListItemIcon>
+            <ListItemText
+              style={{ textAlign: langConf[lang].right }}
+              primary={langConf[lang].receivedInvoices}
+            />
+          </ListItem>
+          <ListItem
+            onClick={() =>
+              this.setState({ screen: langConf[lang].sentInvoices })
+            }
+            component={Link}
+            to={"/sentInvoices"}
+            button
+          >
+            <ListItemIcon>
+              <InvoiceIcon />
+            </ListItemIcon>
+            <ListItemText
+              style={{ textAlign: langConf[lang].right }}
+              primary={langConf[lang].sentInvoices}
+            />
+          </ListItem>
+          <ListItem
+            onClick={() => this.setState({ screen: langConf[lang].myClients })}
+            component={Link}
+            to={"/clients"}
+            button
+          >
+            <ListItemIcon>
+              <ClientsIcon />
+            </ListItemIcon>
+            <ListItemText
+              style={{ textAlign: langConf[lang].right }}
+              primary={langConf[lang].myClients}
+            />
+          </ListItem>
         </List>
       </div>
     );
-
-    console.log(langConf[lang].direction);
 
     return (
       <div className={classes.root}>
@@ -147,12 +216,15 @@ class NavBar extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography noWrap className={"fontStyle24"}>
-              WGL
+              {screen}
             </Typography>
             <LangFormControl direction={langConf[lang].direction} width={width}>
               <Select
                 value={lang}
-                onChange={e => this.setState({ lang: e.target.value })}
+                onChange={e => {
+                  this.setState({ lang: e.target.value });
+                  this.setScreen(e.target.value);
+                }}
                 input={
                   <Input
                     style={{ width: 100, textAlign: "left" }}
@@ -213,7 +285,7 @@ class NavBar extends React.Component {
           }}
         >
           <div className={classes.toolbar} />
-          <RoutesManager width={width} lang={lang} />
+          <RoutesManager width={width} lang={lang} data={data} />
         </main>
       </div>
     );

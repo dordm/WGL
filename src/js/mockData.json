@@ -1,0 +1,35 @@
+{
+  "suppliers": [
+    {
+      "name" :"חברת חשמל",
+      "desc" :"חברת חשמל לישראל...",
+      "logo" :"",
+      "lastInvoice":{
+        "name": "חשבון חשמל 07-2019",
+        "invoiceNo": "413453133",
+        "amount": "250$",
+        "openAmount": "100$",
+        "taxAmount": "10$",
+        "fileLocation": ""
+      }
+    },
+    {
+      "name" :"חברת מים",
+      "desc" :"חברת מים לישראל...",
+      "logo" :"",
+      "lastInvoice":{
+        "name": "חשבון מים 07-2019",
+        "invoiceNo": "413453133",
+        "amount": "250$",
+        "openAmount": "100$",
+        "taxAmount": "10$",
+        "fileLocation": ""
+      }
+    }
+  ],
+  "sentInvoices":[
+
+  ],
+  "receivedInvoices":[],
+  "clients":[]
+}

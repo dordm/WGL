@@ -32,7 +32,14 @@
     "validationUpperCase": "Password must contain an upper case letter",
     "validationNumber": "Password must contain a number",
     "validationLength": "Password must contain at least 8 characters",
-    "userVerified": "User verified successfully"
+    "userVerified": "User verified successfully",
+    "mySuppliers": "My Suppliers",
+    "receivedInvoices": "Received Invoices",
+    "sentInvoices": "Sent Invoices",
+    "myClients": "My Clients",
+    "invoiceAmount": "Invoice Amount: ",
+    "lastInvoice": "Last Invoice",
+    "showAllInvoices": "Show All Invoices"
   },
   "hebrew":{
     "right": "right",
@@ -67,6 +74,13 @@
     "validationUpperCase": "הסיסמא חייבת להכיל אות גדולה אנגלית",
     "validationNumber": "הסיסמא חייבת להכיל מספר",
     "validationLength": "הסיסמא חייבת להכיל לפחות 8 תווים",
-    "userVerified": "המשתמש אומת בהצלחה"
+    "userVerified": "המשתמש אומת בהצלחה",
+    "mySuppliers": "הספקים שלי",
+    "receivedInvoices": "חשבוניות שקיבלתי",
+    "sentInvoices": "חשבוניות ששלחתי",
+    "myClients": "הלקוחות שלי",
+    "invoiceAmount": "סכום החשבונית: ",
+    "lastInvoice": "חשבונית אחרונה",
+    "showAllInvoices": "הצגת כל החשבוניות"
   }
 }

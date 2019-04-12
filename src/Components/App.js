@@ -5,6 +5,8 @@ import Login from "../Layouts/Login";
 import { Auth } from "aws-amplify/lib/index";
 import { BrowserRouter } from "react-router-dom";
 import NavBar from "./NavBar";
+import "../js/API";
+import Loader from "./Loader";
 
 Amplify.configure({
   Auth: {
@@ -20,7 +22,9 @@ class App extends Component {
     super(props);
     this.state = {
       width: window.innerWidth,
-      user: null
+      user: null,
+      data: null,
+      loading: true
     };
 
     this.updateDimensions = this.updateDimensions.bind(this);
@@ -33,6 +37,13 @@ class App extends Component {
   componentDidMount() {
     Auth.currentAuthenticatedUser()
       .then(async user => {
+        setTimeout(
+          () =>
+            window.AppApi.getData().then(res => {
+              this.setState({ data: res, loading: false });
+            }),
+          1000
+        );
         this.setState({ user });
       })
       .catch(err => {});
@@ -44,12 +55,13 @@ class App extends Component {
   }
 
   render() {
-    const { width, user } = this.state;
+    const { width, user, data, loading } = this.state;
     return (
       <div>
         <BrowserRouter>
           <div>
-            <NavBar width={width} user={user} />
+            <Loader size={50} open={loading} />
+            <NavBar width={width} data={data} user={user} />
           </div>
         </BrowserRouter>
       </div>
