@@ -120,7 +120,8 @@ class MySuppliers extends React.Component {
                     <ListItemText
                         style={{
                             paddingLeft: langConf[lang].direction === "rtl" ? "20px" : "unset",
-                            paddingRight: langConf[lang].direction === "ltr" ? "20px" : "unset"
+                            paddingRight: langConf[lang].direction === "ltr" ? "20px" : "unset",
+                            marginRight: langConf[lang].direction === "rtl" ? "-16px" : "unset"
                         }}
                       primary={
                         <Typography
@@ -143,7 +144,8 @@ class MySuppliers extends React.Component {
                     <ListItemSecondaryAction
                       style={{
                         left: langConf[lang].direction === "rtl" ? "8px" : "unset",
-                        right: langConf[lang].direction === "ltr" ? "8px" : "unset"
+                        right: langConf[lang].direction === "ltr" ? "8px" : "unset",
+                          padding:0
                       }}
                     >
                       <StyledDownloadIcon/>

@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccf53fcb-1e04-42e9-a45a-30b62411642d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Layouts/MyClients.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Layouts/MySuppliers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Layouts/RecievedInvoices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Layouts/SentInvoices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/mockData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/RoutesManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RoutesManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/StyledComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/StyledComponents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/lang.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/lang.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Layouts/MySuppliers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/MySuppliers.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -63,8 +52,8 @@
       <file leaf-file-name="MySuppliers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Layouts/MySuppliers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="156" column="44" selection-start-line="156" selection-start-column="44" selection-end-line="156" selection-end-column="44" />
+            <state relative-caret-position="125">
+              <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -327,18 +316,18 @@
       <workItem from="1554792849768" duration="1641000" />
       <workItem from="1554794703617" duration="16406000" />
       <workItem from="1554878883887" duration="20000" />
-      <workItem from="1555070281412" duration="10967000" />
+      <workItem from="1555070281412" duration="11455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29034000" />
+    <option name="totallyTimeSpent" value="29522000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891776" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49891776" visible="true" weight="0.24973656" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -347,7 +336,7 @@
       <window_info id="npm" order="3" sideWeight="0.50108224" side_tool="true" weight="0.24973656" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32900432" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32900432" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32900432" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -747,8 +736,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Layouts/MySuppliers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="156" column="44" selection-start-line="156" selection-start-column="44" selection-end-line="156" selection-end-column="44" />
+        <state relative-caret-position="125">
+          <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
