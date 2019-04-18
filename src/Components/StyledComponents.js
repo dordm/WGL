@@ -1,6 +1,15 @@
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import Chip from "@material-ui/core/Chip";
+import List from "@material-ui/core/List";
+import DownloadIcon from "@material-ui/icons/GetApp";
+
+export const StyledSupplier = styled.div`
+  background: white;
+  margin-bottom: 16px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+`;
 
 export const MyButton = styled(Button)`
   text-transform: none !important;
@@ -41,4 +50,42 @@ export const StyledChip = styled(Chip)`
         : props.type === "success"
             ? "0.5px solid #2fd565"
             : ""} !important;
+`;
+
+export const ListSuppliers = styled(List)`
+  width: 50%;
+  @media (max-width: 1650px) and (min-width: 1050px) {
+    width: 60%;
+  }
+  @media (max-width: 1050px) and (min-width: 600px) {
+    width: 80%;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+`;
+
+export const StyledDownloadIcon = styled(DownloadIcon)`
+    fill: #4c84ff !important;
+    cursor:pointer;
+`;
+
+export const DivWrapper = styled.div`
+  direction: ${props => props.direction};
+  display: flex;
+  justify-content: center;
+`;
+
+export const StyledSelect = styled.select`
+  direction: ${props => props.direction};
+  padding-right: ${props => (props.direction === "rtl" ? "7" : "0")}px;
+  margin-top: 2px;
+  border: 1px solid #e4e8ed;
+  box-sizing: border-box;
+  height: 36px;
+  background: #ffffff;
+  width: 110px;
+  padding-left: ${props => (props.direction === "ltr" ? "7" : "0")}px;
+  border-radius: 100px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;

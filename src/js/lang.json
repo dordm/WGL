@@ -39,7 +39,10 @@
     "myClients": "My Clients",
     "invoiceAmount": "Invoice Amount: ",
     "lastInvoice": "Last Invoice",
-    "showAllInvoices": "Show All Invoices"
+    "showAllInvoices": "Show All Invoices",
+    "filterBySupplier": "Filter By Supplier",
+    "all": "All",
+    "filterByClient": "Filter By Client"
   },
   "hebrew":{
     "right": "right",
@@ -81,6 +84,9 @@
     "myClients": "הלקוחות שלי",
     "invoiceAmount": "סכום החשבונית: ",
     "lastInvoice": "חשבונית אחרונה",
-    "showAllInvoices": "הצגת כל החשבוניות"
+    "showAllInvoices": "הצגת כל החשבוניות",
+    "filterBySupplier": "סנן לפי ספק",
+    "all": "הכל",
+    "filterByClient": "סנן לפי לקוח"
   }
 }

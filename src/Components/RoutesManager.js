@@ -52,6 +52,33 @@ class RoutesManager extends React.Component {
           render={props => (
             <SentInvoices
               data={data ? data.sentInvoices : []}
+              listClients={data ? data.clients : []}
+              lang={lang}
+              width={width}
+              {...props}
+            />
+          )}
+        />
+          <Route
+              exact
+              path="/sentInvoices/:clientId"
+              render={props => (
+                  <SentInvoices
+                      data={data ? data.sentInvoices : []}
+                      listClients={data ? data.clients : []}
+                      lang={lang}
+                      width={width}
+                      {...props}
+                  />
+              )}
+          />
+        <Route
+          exact
+          path="/receivedInvoices"
+          render={props => (
+            <ReceivedInvoices
+              data={data ? data.receivedInvoices : []}
+              listSuppliers={data ? data.listSuppliers : []}
               lang={lang}
               width={width}
               {...props}
@@ -60,10 +87,11 @@ class RoutesManager extends React.Component {
         />
         <Route
           exact
-          path="/receivedInvoices"
+          path="/receivedInvoices/:supplierId"
           render={props => (
             <ReceivedInvoices
               data={data ? data.receivedInvoices : []}
+              listSuppliers={data ? data.listSuppliers : []}
               lang={lang}
               width={width}
               {...props}

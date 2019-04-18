@@ -73,10 +73,20 @@ const styles = theme => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing.unit * 3,
+    padding: 16,
     marginTop: 60
   }
 });
+
+export const notifySetScreen = screen => {
+  setScreenNotify(screen);
+};
+
+function setScreenNotify(screen) {
+  this.setState({
+    screen: screen
+  });
+}
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -86,6 +96,8 @@ class NavBar extends React.Component {
       lang: "hebrew",
       screen: ""
     };
+
+    setScreenNotify = setScreenNotify.bind(this);
   }
 
   componentDidMount() {
@@ -129,7 +141,10 @@ class NavBar extends React.Component {
         <List style={{ direction: langConf[lang].direction }}>
           <ListItem
             onClick={() =>
-              this.setState({ screen: langConf[lang].mySuppliers })
+              this.setState({
+                screen: langConf[lang].mySuppliers,
+                mobileOpen: false
+              })
             }
             component={Link}
             to={"/suppliers"}
@@ -145,7 +160,10 @@ class NavBar extends React.Component {
           </ListItem>
           <ListItem
             onClick={() =>
-              this.setState({ screen: langConf[lang].receivedInvoices })
+              this.setState({
+                screen: langConf[lang].receivedInvoices,
+                mobileOpen: false
+              })
             }
             component={Link}
             to={"/receivedInvoices"}
@@ -161,7 +179,10 @@ class NavBar extends React.Component {
           </ListItem>
           <ListItem
             onClick={() =>
-              this.setState({ screen: langConf[lang].sentInvoices })
+              this.setState({
+                screen: langConf[lang].sentInvoices,
+                mobileOpen: false
+              })
             }
             component={Link}
             to={"/sentInvoices"}
@@ -176,7 +197,12 @@ class NavBar extends React.Component {
             />
           </ListItem>
           <ListItem
-            onClick={() => this.setState({ screen: langConf[lang].myClients })}
+            onClick={() =>
+              this.setState({
+                screen: langConf[lang].myClients,
+                mobileOpen: false
+              })
+            }
             component={Link}
             to={"/clients"}
             button
@@ -206,7 +232,13 @@ class NavBar extends React.Component {
               langConf[lang].direction === "rtl" && width > 600 ? 240 : ""
           }}
         >
-          <Toolbar style={{ direction: langConf[lang].direction }}>
+          <Toolbar
+            style={{
+              direction: langConf[lang].direction,
+              paddingRight: width > 600 ? 16 : 0,
+              paddingLeft: width > 600 ? 16 : 0
+            }}
+          >
             <IconButton
               color="inherit"
               aria-label="Open drawer"
@@ -215,7 +247,7 @@ class NavBar extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Typography noWrap className={"fontStyle24"}>
+            <Typography noWrap style={{fontWeight:'bold'}} className={width > 600 ? "fontStyle24" : "fontStyle5"}>
               {screen}
             </Typography>
             <LangFormControl direction={langConf[lang].direction} width={width}>

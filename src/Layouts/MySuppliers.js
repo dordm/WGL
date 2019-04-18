@@ -2,23 +2,16 @@ import React from "react";
 import langConf from "../js/lang";
 import styled from "styled-components";
 import "../js/API";
-import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Avatar from "@material-ui/core/Avatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
-import DownloadIcon from "@material-ui/icons/GetApp";
-import {StyledChip} from "../Components/StyledComponents";
+import {StyledChip, ListSuppliers, StyledDownloadIcon, DivWrapper, StyledSupplier} from "../Components/StyledComponents";
 import Visibility from "@material-ui/icons/Visibility";
 import {Link} from 'react-router-dom';
-
-const DivWrapper = styled.div`
-  direction: ${props => props.direction};
-  display: flex;
-  justify-content: center;
-`;
+import {notifySetScreen} from "../Components/NavBar";
 
 const ShowIcon = styled(Visibility)`
     color: #4C84FF !important;
@@ -26,31 +19,6 @@ const ShowIcon = styled(Visibility)`
     width: 20px !important;
     margin-left: ${props => props.direction === "rtl" ? "-8px" : "4px"} !important;
     margin-right: ${props => props.direction === "rtl" ? "4px" : "-8px"} !important;
-`;
-
-const StyledDownloadIcon = styled(DownloadIcon)`
-    fill: #4c84ff !important;
-    cursor:pointer;
-`;
-
-const StyledSupplier = styled.div`
-  background: white;
-  margin-bottom: 24px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-`;
-
-const ListSuppliers = styled(List)`
-  width: 50%;
-  @media (max-width: 1650px) and (min-width: 1050px) {
-    width: 60%;
-  }
-  @media (max-width: 1050px) and (min-width: 600px) {
-    width: 80%;
-  }
-  @media (max-width: 600px) {
-    width: 100%;
-  }
 `;
 
 const TypoLastInvoice = styled(Typography)`
@@ -66,7 +34,6 @@ class MySuppliers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      suppliers: []
     };
   }
 
@@ -156,9 +123,9 @@ class MySuppliers extends React.Component {
                             type={"info"}
                             icon={<ShowIcon direction={langConf[lang].direction} />}
                             label={langConf[lang].showAllInvoices}
-                            onClick={() => {}}
+                            onClick={() => {notifySetScreen(langConf[lang].receivedInvoices)}}
                             component={Link}
-                            to={"/receivedInvoices"}
+                            to={"/receivedInvoices/" + item.id}
                             variant={"outlined"}
                         />
                     </ListItem>
