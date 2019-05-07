@@ -38,7 +38,7 @@ class MySuppliers extends React.Component {
   }
 
   render() {
-    const { lang, width, data } = this.props;
+    const { lang, data } = this.props;
     return (
       <DivWrapper direction={langConf[lang].direction}>
         <ListSuppliers>

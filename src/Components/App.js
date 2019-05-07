@@ -35,26 +35,18 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // Auth.currentAuthenticatedUser()
-    //   .then(async user => {
-    //     setTimeout(
-    //       () =>
-    //         window.AppApi.getData().then(res => {
-    //           this.setState({ data: res, loading: false });
-    //         }),
-    //       1000
-    //     );
-    //     this.setState({ user });
-    //   })
-    //   .catch(err => {});
-
-      setTimeout(
+    Auth.currentAuthenticatedUser()
+      .then(async user => {
+        setTimeout(
           () =>
-              window.AppApi.getData().then(res => {
-                  this.setState({ data: res, loading: false });
-              }),
+            window.AppApi.getData().then(res => {
+              this.setState({ data: res, loading: false });
+            }),
           1000
-      );
+        );
+        this.setState({ user });
+      })
+      .catch(err => {});
 
     window.addEventListener("resize", this.updateDimensions);
   }
@@ -77,5 +69,4 @@ class App extends Component {
   }
 }
 
-export default App;
-// export default withAuthenticator(App, false, [<Login />]);
+export default withAuthenticator(App, false, [<Login />]);

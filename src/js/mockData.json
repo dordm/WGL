@@ -122,15 +122,21 @@
   "clients":[
     {
       "name": "לקוח 1",
-      "id": "1"
+      "id": "1",
+      "email": "email1@gmail.com",
+      "phone": "0502124124"
     },
     {
       "name": "לקוח 2",
-      "id": "2"
+      "id": "2",
+      "email": "email2@gmail.com",
+      "phone": "0502124123"
     },
     {
       "name": "לקוח 3",
-      "id": "3"
+      "id": "3",
+      "email": "email3@gmail.com",
+      "phone": "0502124122"
     }
   ]
 }

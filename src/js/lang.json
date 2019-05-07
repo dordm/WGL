@@ -42,7 +42,14 @@
     "showAllInvoices": "Show All Invoices",
     "filterBySupplier": "Filter By Supplier",
     "all": "All",
-    "filterByClient": "Filter By Client"
+    "filterByClient": "Filter By Client",
+    "compHP": "Company Id",
+    "phone": "Phone",
+    "addClient": "Add Client",
+    "compName": "Company Name",
+    "cancel": "Cancel",
+    "add": "Add",
+    "save": "Save"
   },
   "hebrew":{
     "right": "right",
@@ -87,6 +94,13 @@
     "showAllInvoices": "הצגת כל החשבוניות",
     "filterBySupplier": "סנן לפי ספק",
     "all": "הכל",
-    "filterByClient": "סנן לפי לקוח"
+    "filterByClient": "סנן לפי לקוח",
+    "compHP": "ח.פ. / ת.ז",
+    "phone": "טלפון",
+    "addClient": "הוסף לקוח",
+    "compName": "שם החברה",
+    "cancel": "ביטול",
+    "add": "הוסף",
+    "save": "שמור"
   }
 }

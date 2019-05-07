@@ -21,7 +21,7 @@ class ReceivedInvoices extends React.Component {
   }
 
   render() {
-    const { lang, width, data, listSuppliers } = this.props;
+    const { lang, data, listSuppliers } = this.props;
     const { selectedComp } = this.state;
     return (
       <div align="center">

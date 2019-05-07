@@ -3,6 +3,42 @@ import styled from "styled-components";
 import Chip from "@material-ui/core/Chip";
 import List from "@material-ui/core/List";
 import DownloadIcon from "@material-ui/icons/GetApp";
+import EditIcon from '@material-ui/icons/Edit';
+import IconButton from '@material-ui/core/IconButton';
+import DialogContent from '@material-ui/core/DialogContent';
+import TextField from '@material-ui/core/TextField';
+
+export const StyledDivBtns = styled.div`
+  margin-top: 30px;
+  display: flex;
+  margin-bottom: 10px;
+`;
+
+export const ButtonCancel = styled(Button)`
+  justify-self: left;
+  height: 36px;
+  width: 91px;
+  text-transform: none !important;
+  border-radius: 100px !important;
+`;
+
+export const StyledTxtFld = styled(TextField)`
+  margin-top: 16px !important;
+  width: ${props => (props.width > 600 ? "394px" : "235px")};
+  height: 56px;
+`;
+
+export const StyledDialogContent = styled(DialogContent)`
+  display: block;
+  width: ${props => (props.width > 600 ? "445px" : "285px")};
+  text-align: ${props => (props.direction === "rtl" ? "right" : "left")} !important;
+`;
+
+export const StyledCloseIcon = styled(IconButton)`
+  position: absolute !important;
+  right: 20px;
+  top: 5px;
+`;
 
 export const StyledSupplier = styled.div`
   background: white;
@@ -66,6 +102,11 @@ export const ListSuppliers = styled(List)`
 `;
 
 export const StyledDownloadIcon = styled(DownloadIcon)`
+    fill: #4c84ff !important;
+    cursor:pointer;
+`;
+
+export const StyledEditIcon = styled(EditIcon)`
     fill: #4c84ff !important;
     cursor:pointer;
 `;

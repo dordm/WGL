@@ -6,13 +6,12 @@ import {
   StyledDownloadIcon,
   DivWrapper,
   StyledSupplier,
-    StyledSelect
+  StyledSelect
 } from "../Components/StyledComponents";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
-import styled from "styled-components";
 
 class SentInvoices extends React.Component {
   constructor(props) {
@@ -23,7 +22,7 @@ class SentInvoices extends React.Component {
   }
 
   render() {
-    const { lang, width, data, listClients } = this.props;
+    const { lang, data, listClients } = this.props;
     const { selectedClient } = this.state;
     return (
       <div align="center">
@@ -49,7 +48,8 @@ class SentInvoices extends React.Component {
           <ListSuppliers>
             {data
               .filter(
-                item => (selectedClient ? item.clientId === selectedClient : true)
+                item =>
+                  selectedClient ? item.clientId === selectedClient : true
               )
               .map((item, idx) => (
                 <StyledSupplier key={idx}>
