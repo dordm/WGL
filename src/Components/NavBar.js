@@ -26,6 +26,7 @@ import ReceiveIcon from "@material-ui/icons/Archive";
 import ClientsIcon from "@material-ui/icons/Contacts";
 import SuppliersIcon from "@material-ui/icons/GroupWork";
 import { Link } from "react-router-dom";
+import { Auth } from "aws-amplify/lib/index";
 
 const Logo = styled.img`
   height: 50px;
@@ -93,7 +94,7 @@ class NavBar extends React.Component {
     super(props);
     this.state = {
       mobileOpen: false,
-      lang: "hebrew",
+      lang: localStorage.getItem("language") || "hebrew",
       screen: ""
     };
 
@@ -117,6 +118,18 @@ class NavBar extends React.Component {
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
+
+  setLang(lang) {
+    this.setState({ lang });
+    this.setScreen(lang);
+    localStorage.setItem("language", lang);
+  }
+
+  logout() {
+    Auth.signOut()
+      .then(data => {})
+      .catch(err => {});
+  }
 
   render() {
     const { classes, width, data } = this.props;
@@ -215,6 +228,22 @@ class NavBar extends React.Component {
               primary={langConf[lang].myClients}
             />
           </ListItem>
+            <ListItem
+                onClick={() =>
+                    this.logout()
+                }
+                component={Link}
+                to={"/"}
+                button
+            >
+                <ListItemIcon>
+                    <img src={require('../images/logout.svg')} alt={"logout"}/>
+                </ListItemIcon>
+                <ListItemText
+                    style={{ textAlign: langConf[lang].right }}
+                    primary={langConf[lang].logout}
+                />
+            </ListItem>
         </List>
       </div>
     );
@@ -247,15 +276,18 @@ class NavBar extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Typography noWrap style={{fontWeight:'bold'}} className={width > 600 ? "fontStyle24" : "fontStyle5"}>
+            <Typography
+              noWrap
+              style={{ fontWeight: "bold" }}
+              className={width > 600 ? "fontStyle24" : "fontStyle5"}
+            >
               {screen}
             </Typography>
             <LangFormControl direction={langConf[lang].direction} width={width}>
               <Select
                 value={lang}
                 onChange={e => {
-                  this.setState({ lang: e.target.value });
-                  this.setScreen(e.target.value);
+                  this.setLang(e.target.value);
                 }}
                 input={
                   <Input

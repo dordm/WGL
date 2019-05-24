@@ -7,6 +7,11 @@ import { BrowserRouter } from "react-router-dom";
 import NavBar from "./NavBar";
 import "../js/API";
 import Loader from "./Loader";
+import * as Sentry from "@sentry/browser";
+
+Sentry.init({
+  dsn: "https://2d1a0679c2a243feb0105fad407a4a69@sentry.io/1467358"
+});
 
 Amplify.configure({
   Auth: {

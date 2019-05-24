@@ -4,6 +4,7 @@ import MySuppliers from "../Layouts/MySuppliers";
 import MyClients from "../Layouts/MyClients";
 import SentInvoices from "../Layouts/SentInvoices";
 import ReceivedInvoices from "../Layouts/RecievedInvoices";
+import NotFound404 from "./NotFound404";
 
 class RoutesManager extends React.Component {
   render() {
@@ -59,19 +60,19 @@ class RoutesManager extends React.Component {
             />
           )}
         />
-          <Route
-              exact
-              path="/sentInvoices/:clientId"
-              render={props => (
-                  <SentInvoices
-                      data={data ? data.sentInvoices : []}
-                      listClients={data ? data.clients : []}
-                      lang={lang}
-                      width={width}
-                      {...props}
-                  />
-              )}
-          />
+        <Route
+          exact
+          path="/sentInvoices/:clientId"
+          render={props => (
+            <SentInvoices
+              data={data ? data.sentInvoices : []}
+              listClients={data ? data.clients : []}
+              lang={lang}
+              width={width}
+              {...props}
+            />
+          )}
+        />
         <Route
           exact
           path="/receivedInvoices"
@@ -98,6 +99,7 @@ class RoutesManager extends React.Component {
             />
           )}
         />
+        <Route component={() => <NotFound404 width={width} />} />
       </Switch>
     );
   }

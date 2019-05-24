@@ -2,3 +2,13 @@ body, html {
     background:#F5F7FB;
     margin:0px;
 }
+
+.selectArrowRtl {
+    left:0;
+    right:unset !important;
+}
+
+.selectTextRtl {
+    padding-right:0 !important;
+    padding-left:32px;
+}

@@ -12,6 +12,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+import * as Sentry from "@sentry/browser";
 
 class SentInvoices extends React.Component {
   constructor(props) {
@@ -19,6 +20,15 @@ class SentInvoices extends React.Component {
     this.state = {
       selectedClient: props.match.params.clientId || ""
     };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    Sentry.withScope(scope => {
+      Object.keys(errorInfo).forEach(key => {
+        scope.setExtra(key, errorInfo[key]);
+      });
+      Sentry.captureException(error);
+    });
   }
 
   render() {

@@ -49,7 +49,12 @@
     "compName": "Company Name",
     "cancel": "Cancel",
     "add": "Add",
-    "save": "Save"
+    "save": "Save",
+    "editClient": "Edit Client",
+    "logout": "Logout",
+    "country": "Country",
+    "emailInvalid": "Email is not valid",
+    "idInvalid": "Company Id is not valid"
   },
   "hebrew":{
     "right": "right",
@@ -85,7 +90,7 @@
     "validationNumber": "הסיסמא חייבת להכיל מספר",
     "validationLength": "הסיסמא חייבת להכיל לפחות 8 תווים",
     "userVerified": "המשתמש אומת בהצלחה",
-    "mySuppliers": "הספקים שלי",
+    "mySuppliers": "הספקים / נותני השירות שלי",
     "receivedInvoices": "חשבוניות שקיבלתי",
     "sentInvoices": "חשבוניות ששלחתי",
     "myClients": "הלקוחות שלי",
@@ -101,6 +106,11 @@
     "compName": "שם החברה",
     "cancel": "ביטול",
     "add": "הוסף",
-    "save": "שמור"
+    "save": "שמור",
+    "editClient": "ערוך לקוח",
+    "logout": "התנתק",
+    "country": "מדינה",
+    "emailInvalid": "אימייל אינו תקין",
+    "idInvalid": "ת.ז. / ח.פ. אינו תקין"
   }
 }

@@ -2,15 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccf53fcb-1e04-42e9-a45a-30b62411642d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/images/Close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/NotFound404.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/NumberFormatCustom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/error404.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/logout.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/Utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/StyledComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/StyledComponents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RoutesManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RoutesManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Layouts/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Layouts/MyClients.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/MyClients.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Layouts/MySuppliers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/MySuppliers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Layouts/RecievedInvoices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/RecievedInvoices.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Layouts/SentInvoices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/SentInvoices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/lang.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/lang.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/mockData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/mockData.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,22 +36,10 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+            <state relative-caret-position="204">
+              <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySuppliers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Layouts/MySuppliers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,8 +48,8 @@
       <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Layouts/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="232" column="52" lean-forward="true" selection-start-line="232" selection-start-column="52" selection-end-line="232" selection-end-column="52" />
+            <state relative-caret-position="296">
+              <caret line="197" column="9" lean-forward="true" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="9" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -60,68 +57,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lang.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NumberFormatCustom.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/NumberFormatCustom.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="47" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lang.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/lang.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="39" lean-forward="true" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyClients.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Layouts/MyClients.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="111" column="73" selection-start-line="111" selection-start-column="73" selection-end-line="111" selection-end-column="73" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecievedInvoices.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Layouts/RecievedInvoices.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mockData.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/mockData.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="125" column="34" selection-start-line="125" selection-start-column="34" selection-end-line="125" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StyledComponents.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/StyledComponents.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#46#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SentInvoices.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Layouts/SentInvoices.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="471">
+              <caret line="113" column="39" selection-start-line="113" selection-start-column="39" selection-end-line="113" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -129,11 +78,62 @@
       <file leaf-file-name="RoutesManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/RoutesManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+            <state relative-caret-position="635">
+              <caret line="100" column="10" selection-start-line="100" selection-start-column="10" selection-end-line="100" selection-end-column="10" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotFound404.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/NotFound404.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyClients.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Layouts/MyClients.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySuppliers.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Layouts/MySuppliers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecievedInvoices.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Layouts/RecievedInvoices.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SentInvoices.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Layouts/SentInvoices.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -149,36 +149,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>showSnackbar</find>
-      <find>-20</find>
-      <find>divLogin</find>
-      <find>classes.appB</find>
-      <find>container</find>
-      <find>Logo</find>
-      <find>240</find>
-      <find>Utils</find>
-      <find>console.log</find>
-      <find>Routes</find>
-      <find>wgl</find>
-      <find>langObj</find>
-      <find>InvoiceIcon</find>
-      <find>DownloadIcon</find>
-      <find>586782</find>
-      <find>suppliers</find>
-      <find>toolbar</find>
-      <find>fontStyle24</find>
-      <find>{screen}</find>
-      <find>fontStyle5</find>
-      <find>182d5a</find>
-      <find>todo</find>
-      <find>//</find>
-      <find>MyButton</find>
       <find>onClicl</find>
       <find>compName</find>
       <find>classNames</find>
       <find>ButtonCancel</find>
       <find>addDialogEdit</find>
       <find>{}</find>
+      <find>language</find>
+      <find>lang</find>
+      <find>setScreen</find>
+      <find>constru</find>
+      <find>LOGOUT</find>
+      <find>langConf[lang].mySuppliers</find>
+      <find>Auth</find>
+      <find>signup</find>
+      <find>industry</find>
+      <find>displayName</find>
+      <find>signuplay</find>
+      <find>signUpLay</find>
+      <find>dialog</find>
+      <find>signupLay</find>
+      <find>inputlabel</find>
+      <find>StyledSe</find>
+      <find>StyledSelect</find>
+      <find>signUpLayout</find>
+      <find>SignUp</find>
+      <find>newUser</find>
+      <find>renderInput</find>
+      <find>NumberFormatCustom</find>
+      <find>signUp</find>
+      <find>Sentry</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -190,21 +190,25 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Components/Loader.js" />
         <option value="$PROJECT_DIR$/src/js/lang.js" />
-        <option value="$PROJECT_DIR$/src/Layouts/Login.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/Layouts/MyInvoices.js" />
         <option value="$PROJECT_DIR$/src/js/API.js" />
-        <option value="$PROJECT_DIR$/src/Components/App.js" />
-        <option value="$PROJECT_DIR$/src/Components/RoutesManager.js" />
         <option value="$PROJECT_DIR$/src/css/fonts.css" />
-        <option value="$PROJECT_DIR$/src/Components/NavBar.js" />
         <option value="$PROJECT_DIR$/src/js/mockData.json" />
-        <option value="$PROJECT_DIR$/src/Layouts/SentInvoices.js" />
-        <option value="$PROJECT_DIR$/src/Layouts/MySuppliers.js" />
-        <option value="$PROJECT_DIR$/src/Layouts/RecievedInvoices.js" />
         <option value="$PROJECT_DIR$/src/Components/StyledComponents.js" />
-        <option value="$PROJECT_DIR$/src/Layouts/MyClients.js" />
+        <option value="$PROJECT_DIR$/src/Components/NavBar.js" />
+        <option value="$PROJECT_DIR$/src/js/Utils.js" />
+        <option value="$PROJECT_DIR$/src/css/index.css" />
+        <option value="$PROJECT_DIR$/src/Components/NumberFormatCustom.js" />
         <option value="$PROJECT_DIR$/src/js/lang.json" />
+        <option value="$PROJECT_DIR$/src/Components/RoutesManager.js" />
+        <option value="$PROJECT_DIR$/src/Components/NotFound404.js" />
+        <option value="$PROJECT_DIR$/src/Components/App.js" />
+        <option value="$PROJECT_DIR$/src/Layouts/SentInvoices.js" />
+        <option value="$PROJECT_DIR$/src/Layouts/RecievedInvoices.js" />
+        <option value="$PROJECT_DIR$/src/Layouts/MyClients.js" />
+        <option value="$PROJECT_DIR$/src/Layouts/Login.js" />
+        <option value="$PROJECT_DIR$/src/Layouts/MySuppliers.js" />
       </list>
     </option>
   </component>
@@ -235,6 +239,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,12 +286,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Tiidan/projects/app" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -298,14 +302,15 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Dor Damry\AppData\Roaming\npm\node_modules\prettier" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dor Damry\Desktop\Osek\projects\wgl\src\images" />
+      <recent name="C:\Users\Dor Damry\Desktop\Osek\projects\wgl\src\Components" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dor Damry\Desktop\Osek\projects\wgl\src\Components" />
       <recent name="C:\Users\Dor Damry\Desktop\Osek\projects\wgl\src\images" />
       <recent name="C:\Users\Dor Damry\Desktop\Osek\projects\wgl\src\css" />
-      <recent name="C:\Users\Dor Damry\Desktop\Osek\projects\wgl\src\Components" />
       <recent name="C:\Users\Dor Damry\Desktop\Osek\projects\wgl\src\Layouts" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Dor Damry\Desktop\Osek\projects\wgl\src\Components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -336,26 +341,30 @@
       <workItem from="1555070281412" duration="11509000" />
       <workItem from="1555590210187" duration="6408000" />
       <workItem from="1557095777306" duration="7342000" />
+      <workItem from="1557243175517" duration="118000" />
+      <workItem from="1557303033839" duration="40000" />
+      <workItem from="1558279817812" duration="1491000" />
+      <workItem from="1558334067255" duration="30000" />
+      <workItem from="1558686503633" duration="9031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43326000" />
+    <option name="totallyTimeSpent" value="54036000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891776" visible="true" weight="0.24960254" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891776" visible="true" weight="0.19441517" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="3" sideWeight="0.50108224" side_tool="true" weight="0.24973656" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32900432" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32743362" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32467532" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -364,25 +373,26 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32900432" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32900432" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -393,30 +403,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Layouts/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15793">
-          <caret line="954" column="52" selection-start-line="954" selection-start-column="52" selection-end-line="954" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/NavBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="131" column="36" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/lang.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/fonts.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3128">
@@ -486,9 +472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2227">
           <caret line="131" column="36" lean-forward="true" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -605,42 +588,11 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/lang.js" />
-    <entry file="file://$PROJECT_DIR$/src/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="62" column="10" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Layouts/MyInvoices.js" />
-    <entry file="file://$PROJECT_DIR$/src/js/API.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/fonts.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="11" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/NavBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -651,97 +603,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/App.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/Loader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Layouts/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="232" column="52" lean-forward="true" selection-start-line="232" selection-start-column="52" selection-end-line="232" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/mockData.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="125" column="34" selection-start-line="125" selection-start-column="34" selection-end-line="125" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Layouts/SentInvoices.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/RoutesManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Layouts/MySuppliers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Layouts/RecievedInvoices.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="935">
+          <caret line="62" column="10" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/StyledComponents.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+        <state relative-caret-position="102">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Layouts/MyClients.js">
+    <entry file="file://$PROJECT_DIR$/src/js/mockData.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="111" column="73" selection-start-line="111" selection-start-column="73" selection-end-line="111" selection-end-column="73" />
+        <state relative-caret-position="2125">
+          <caret line="125" column="34" selection-start-line="125" selection-start-column="34" selection-end-line="125" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/API.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/NavBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="246" column="21" selection-start-line="246" selection-start-column="21" selection-end-line="246" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/NumberFormatCustom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="47" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/lang.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="39" lean-forward="true" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+        <state relative-caret-position="471">
+          <caret line="113" column="39" selection-start-line="113" selection-start-column="39" selection-end-line="113" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/RoutesManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="100" column="10" selection-start-line="100" selection-start-column="10" selection-end-line="100" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/NotFound404.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Layouts/RecievedInvoices.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Layouts/MyClients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Layouts/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="197" column="9" lean-forward="true" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Layouts/SentInvoices.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Layouts/MySuppliers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
         </state>
       </provider>
     </entry>

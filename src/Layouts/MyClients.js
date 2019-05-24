@@ -20,6 +20,7 @@ import ListItem from "@material-ui/core/ListItem";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import classNames from "classnames";
+import * as Sentry from "@sentry/browser";
 
 const styles = {
   labelTxt: {
@@ -41,8 +42,18 @@ class MyClients extends React.Component {
       name: "",
       id: "",
       phone: "",
-      email: ""
+      email: "",
+      dialogTitle: ""
     };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    Sentry.withScope(scope => {
+      Object.keys(errorInfo).forEach(key => {
+        scope.setExtra(key, errorInfo[key]);
+      });
+      Sentry.captureException(error);
+    });
   }
 
   onCloseAddClientDialog() {
@@ -69,7 +80,8 @@ class MyClients extends React.Component {
         InputProps={{
           classes: {
             input: "fontStyle5",
-            root: langConf[lang].direction === "rtl" ? classes.rtlDir : undefined
+            root:
+              langConf[lang].direction === "rtl" ? classes.rtlDir : undefined
           }
         }}
         InputLabelProps={{
@@ -85,7 +97,15 @@ class MyClients extends React.Component {
   }
 
   renderAddDialog() {
-    const { addClientOpen, name, id, email, phone, addDialogEdit } = this.state;
+    const {
+      addClientOpen,
+      name,
+      id,
+      email,
+      phone,
+      addDialogEdit,
+      dialogTitle
+    } = this.state;
     const { lang, width } = this.props;
     return (
       <Dialog
@@ -100,8 +120,10 @@ class MyClients extends React.Component {
         <StyledCloseIcon onClick={() => this.onCloseAddClientDialog()}>
           <img alt="Close" src={require("../images/Close.png")} />
         </StyledCloseIcon>
-        <DialogTitle style={{ textAlign: "center", marginTop: 24, paddingBottom:8 }}>
-          {langConf[lang].addClient}
+        <DialogTitle
+          style={{ textAlign: "center", marginTop: 24, paddingBottom: 8 }}
+        >
+          {dialogTitle}
         </DialogTitle>
         <StyledDialogContent width={width} direction={langConf[lang].direction}>
           {this.renderInput("name", "compName")}
@@ -109,7 +131,7 @@ class MyClients extends React.Component {
           {this.renderInput("phone", "phone")}
           {this.renderInput("email", "email")}
           <StyledDivBtns>
-            <div style={{ width: "50%", marginRight:10, textAlign: "right"}}>
+            <div style={{ width: "50%", marginRight: 10, textAlign: "right" }}>
               <ButtonCancel
                 style={{ position: "initial" }}
                 onClick={() => this.onCloseAddClientDialog()}
@@ -143,7 +165,11 @@ class MyClients extends React.Component {
         <div style={{ marginBottom: 8, marginTop: 8 }}>
           <MyButton
             onClick={() =>
-              this.setState({ addClientOpen: true, addDialogEdit: false })
+              this.setState({
+                addClientOpen: true,
+                addDialogEdit: false,
+                dialogTitle: langConf[lang].addClient
+              })
             }
             width={92}
             height={36}
@@ -196,6 +222,7 @@ class MyClients extends React.Component {
                       this.setState({
                         addDialogEdit: true,
                         addClientOpen: true,
+                        dialogTitle: langConf[lang].editClient,
                         client: item,
                         name: item.name,
                         id: item.id,

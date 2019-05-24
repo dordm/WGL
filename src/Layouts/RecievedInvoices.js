@@ -5,12 +5,14 @@ import {
   ListSuppliers,
   StyledDownloadIcon,
   DivWrapper,
-  StyledSupplier, StyledSelect
+  StyledSupplier,
+  StyledSelect
 } from "../Components/StyledComponents";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+import * as Sentry from "@sentry/browser";
 
 class ReceivedInvoices extends React.Component {
   constructor(props) {
@@ -20,15 +22,26 @@ class ReceivedInvoices extends React.Component {
     };
   }
 
+  componentDidCatch(error, errorInfo) {
+    Sentry.withScope(scope => {
+      Object.keys(errorInfo).forEach(key => {
+        scope.setExtra(key, errorInfo[key]);
+      });
+      Sentry.captureException(error);
+    });
+  }
+
   render() {
     const { lang, data, listSuppliers } = this.props;
     const { selectedComp } = this.state;
     return (
       <div align="center">
-        <div style={{marginBottom:16}}>
-          <Typography className={"fontStyle19"}>{langConf[lang].filterBySupplier}</Typography>
+        <div style={{ marginBottom: 16 }}>
+          <Typography className={"fontStyle19"}>
+            {langConf[lang].filterBySupplier}
+          </Typography>
           <StyledSelect
-              direction={langConf[lang].direction}
+            direction={langConf[lang].direction}
             onChange={e => this.setState({ selectedComp: e.target.value })}
             className={"fontStyle16"}
             value={selectedComp}
