@@ -169,6 +169,7 @@ class Login extends Component {
       code: "",
       email: "",
       country: "",
+      countryCode: "",
       id: "",
       confirmPassword: "",
       username: "",
@@ -228,7 +229,8 @@ class Login extends Component {
     }
 
     this.setState({
-      country: this.state.lang === "hebrew" ? "Israel" : "United States"
+      country: this.state.lang === "hebrew" ? "Israel" : "United States",
+      countryCode: this.state.lang === "hebrew" ? "972" : "1"
     });
   }
 
@@ -338,6 +340,7 @@ class Login extends Component {
     const username = this.state.username.trim();
     const id = this.state.id.trim();
     const country = this.state.country;
+    const countryCode = this.state.countryCode;
     const email = this.state.email.trim();
     const emailValidation = this.validateEmail(email);
     if (id === "")
@@ -351,7 +354,8 @@ class Login extends Component {
         attributes: {
           email: email,
           "custom:country": country,
-          "custom:id": id
+          "custom:id": id,
+          "custom:countryCode": countryCode
         }
       })
         .then(data => {
@@ -576,7 +580,12 @@ class Login extends Component {
                 width={width}
                 className={"fontStyle5"}
                 input={<Input id="country" name={"country"} />}
-                onChange={e => this.setState({ country: e.target.value })}
+                onChange={e =>
+                  this.setState({
+                    country: e.target.value,
+                    countryCode: Utils.getCountryCode(e.target.value)
+                  })
+                }
                 inputprops={{
                   id: "country",
                   classes: {

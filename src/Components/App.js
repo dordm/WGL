@@ -42,13 +42,11 @@ class App extends Component {
   componentDidMount() {
     Auth.currentAuthenticatedUser()
       .then(async user => {
-        setTimeout(
-          () =>
-            window.AppApi.getData().then(res => {
+        console.log(user)
+          window.AppApiMock.getData(user.attributes["custom:countryCode"], user.attributes["custom:id"]).then(res => {
+            console.log(res)
               this.setState({ data: res, loading: false });
-            }),
-          1000
-        );
+          })
         this.setState({ user });
       })
       .catch(err => {});
