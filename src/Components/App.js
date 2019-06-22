@@ -43,7 +43,7 @@ class App extends Component {
     Auth.currentAuthenticatedUser()
       .then(async user => {
         console.log(user)
-          window.AppApiMock.getData(user.attributes["custom:countryCode"], user.attributes["custom:id"]).then(res => {
+          window.AppApi.getData(user.attributes["custom:countryCode"], user.attributes["custom:id"]).then(res => {
             console.log(res)
               this.setState({ data: res, loading: false });
           })
