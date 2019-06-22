@@ -22,6 +22,16 @@ Amplify.configure({
   }
 });
 
+export const updateClients = clients => {
+  updateClientsData(clients);
+};
+
+function updateClientsData(clients) {
+  const data = JSON.parse(JSON.stringify(this.state.data));
+  data.clients = clients;
+  this.setState({ data });
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -32,6 +42,7 @@ class App extends Component {
       loading: true
     };
 
+    updateClientsData = updateClientsData.bind(this);
     this.updateDimensions = this.updateDimensions.bind(this);
   }
 
@@ -40,19 +51,26 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.getData();
+    window.addEventListener("resize", this.updateDimensions);
+  }
+
+  getData() {
+    this.setState({ loading: true });
     Auth.currentAuthenticatedUser()
       .then(async user => {
-        console.log(user)
-          window.AppApi.getData(user.attributes["custom:countryCode"], user.attributes["custom:id"]).then(res => {
-            console.log(res)
-              this.setState({ data: res, loading: false });
-          })
+        window.AppApi.getData(
+          user.attributes["custom:countryCode"],
+          user.attributes["custom:id"]
+        ).then(res => {
+          console.log(res);
+          this.setState({ data: res, loading: false });
+        });
         this.setState({ user });
       })
       .catch(err => {});
-
-    window.addEventListener("resize", this.updateDimensions);
   }
+
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDimensions);
   }

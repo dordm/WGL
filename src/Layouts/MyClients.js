@@ -21,6 +21,7 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import classNames from "classnames";
 import * as Sentry from "@sentry/browser";
+import { updateClients } from "../Components/App";
 
 const styles = {
   labelTxt: {
@@ -96,6 +97,49 @@ class MyClients extends React.Component {
     );
   }
 
+  addClient() {
+    const { user, data } = this.props;
+    const { id, name, email, phone } = this.state;
+    window.AppApi.postCustomerData({
+      businessTaxNumber: user.attributes["custom:id"],
+      countryCode: user.attributes["custom:countryCode"],
+      custEmail: email,
+      custMobile: phone,
+      custTaxNumber: id,
+      custName: name,
+      custVendNumber: ""
+    }).then(res => {
+      data.push(res);
+      updateClients(data);
+      this.setState({
+        addClientOpen: false
+      });
+    });
+  }
+
+  editClient() {
+    const { id, name, email, phone, client } = this.state;
+    const {data} = this.props
+      console.log(data)
+    const newClient = JSON.parse(JSON.stringify(client));
+    newClient.custName = name;
+    newClient.custTaxNumber = id;
+    newClient.custEmail = email;
+    newClient.custMobile = phone;
+    window.AppApi.putCustomerData(newClient).then(res => {
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].custNumber === res.custNumber) {
+          data[i] = res;
+          break;
+        }
+      }
+      updateClients(data);
+      this.setState({
+        addClientOpen: false
+      });
+    });
+  }
+
   renderAddDialog() {
     const {
       addClientOpen,
@@ -142,8 +186,7 @@ class MyClients extends React.Component {
             </div>
             <MyButton
               onClick={() => {
-                this.setState({ addClientOpen: false });
-                //todo: call to server with updates
+                addDialogEdit ? this.editClient() : this.addClient();
               }}
               disabled={!name || !id || !email || !phone}
               style={{ justifySelf: "right" }}
@@ -196,25 +239,25 @@ class MyClients extends React.Component {
                       style={{ textAlign: langConf[lang].right }}
                       className={"fontStyle5"}
                     >
-                      {item.name}
+                      {item.custName}
                     </Typography>
                     <Typography
                       style={{ textAlign: langConf[lang].right }}
                       className={"fontStyle11"}
                     >
-                      {langConf[lang].compHP + ": " + item.id}
+                      {langConf[lang].compHP + ": " + item.custTaxNumber}
                     </Typography>
                     <Typography
                       style={{ textAlign: langConf[lang].right }}
                       className={"fontStyle11"}
                     >
-                      {langConf[lang].phone + ": " + item.phone}
+                      {langConf[lang].phone + ": " + item.custMobile}
                     </Typography>
                     <Typography
                       style={{ textAlign: langConf[lang].right }}
                       className={"fontStyle11"}
                     >
-                      {langConf[lang].email + ": " + item.email}
+                      {langConf[lang].email + ": " + item.custEmail}
                     </Typography>
                   </div>
                   <ListItemSecondaryAction
@@ -224,10 +267,10 @@ class MyClients extends React.Component {
                         addClientOpen: true,
                         dialogTitle: langConf[lang].editClient,
                         client: item,
-                        name: item.name,
-                        id: item.id,
-                        phone: item.phone,
-                        email: item.email
+                        name: item.custName,
+                        id: item.custTaxNumber,
+                        phone: item.custMobile,
+                        email: item.custEmail
                       })
                     }
                     style={{

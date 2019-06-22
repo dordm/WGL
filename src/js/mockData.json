@@ -121,22 +121,25 @@
   ],
   "clients":[
     {
-      "name": "לקוח 1",
-      "id": "1",
-      "email": "email1@gmail.com",
-      "phone": "0502124124"
+      "custName": "לקוח 1",
+      "custNumber": "1",
+      "custTaxNumber": "1",
+      "custEmail": "email1@gmail.com",
+      "custMobile": "0502124124"
     },
     {
-      "name": "לקוח 2",
-      "id": "2",
-      "email": "email2@gmail.com",
-      "phone": "0502124123"
+      "custName": "לקוח 2",
+      "custNumber": "2",
+      "custTaxNumber": "2",
+      "custEmail": "email2@gmail.com",
+      "custMobile": "0502124123"
     },
     {
-      "name": "לקוח 3",
-      "id": "3",
-      "email": "email3@gmail.com",
-      "phone": "0502124122"
+      "custName": "לקוח 3",
+      "custNumber": "3",
+      "custTaxNumber": "3",
+      "custEmail": "email3@gmail.com",
+      "custMobile": "0502124122"
     }
   ]
 }

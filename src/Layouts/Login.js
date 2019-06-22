@@ -361,7 +361,7 @@ class Login extends Component {
         .then(data => {
           this.setState({
             password: "",
-            email: "",
+            email,
             username,
             err: "",
             loading: false
@@ -652,19 +652,37 @@ class Login extends Component {
   }
 
   verifyCode() {
-    const { lang } = this.state;
+    const {
+      lang,
+      username,
+      code,
+      country,
+      countryCode,
+      email,
+      id
+    } = this.state;
     this.setState({ err: "", loading: true });
-    const username = this.state.username;
-    const code = this.state.code;
     Auth.confirmSignUp(username, code, {})
       .then(data => {
-        this.setState({
-          code: "",
-          err: "",
-          loading: false
+        window.AppApi.postBusinessData({
+          businessCountry: country,
+          businessCity: "",
+          businessEmail: email,
+          businessMobile: "",
+          businessName: username,
+          businessRegion: "",
+          businessStreet: "",
+          businessTaxNumber: id,
+          countryCode: countryCode
+        }).then(res => {
+          this.setState({
+            code: "",
+            err: "",
+            loading: false
+          });
+          showSnackbar("success", langConf[lang].userVerified);
+          this.props.onStateChange("signIn");
         });
-        showSnackbar("success", langConf[lang].userVerified);
-        this.props.onStateChange("signIn");
       })
       .catch(err => {
         this.setState({

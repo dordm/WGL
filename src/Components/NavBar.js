@@ -132,7 +132,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { classes, width, data } = this.props;
+    const { classes, width, data, user } = this.props;
     const { lang, screen } = this.state;
 
     const drawer = (
@@ -349,7 +349,7 @@ class NavBar extends React.Component {
           }}
         >
           <div className={classes.toolbar} />
-          <RoutesManager width={width} lang={lang} data={data} />
+          <RoutesManager width={width} lang={lang} data={data} user={user} />
         </main>
       </div>
     );

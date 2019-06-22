@@ -48,8 +48,8 @@ class SentInvoices extends React.Component {
           >
             <option value={""}>{langConf[lang].all}</option>
             {listClients.map((item, idx) => (
-              <option key={idx} value={item.id}>
-                {item.name}
+              <option key={idx} value={item.custNumber}>
+                {item.custName}
               </option>
             ))}
           </StyledSelect>

@@ -8,7 +8,7 @@ import NotFound404 from "./NotFound404";
 
 class RoutesManager extends React.Component {
   render() {
-    const { lang, width, data } = this.props;
+    const { lang, width, data, user } = this.props;
     return (
       <Switch>
         <Route
@@ -43,6 +43,7 @@ class RoutesManager extends React.Component {
               data={data ? data.clients : []}
               lang={lang}
               width={width}
+              user={user}
               {...props}
             />
           )}
