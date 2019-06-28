@@ -57,6 +57,7 @@ class RoutesManager extends React.Component {
               listClients={data ? data.clients : []}
               lang={lang}
               width={width}
+              user={user}
               {...props}
             />
           )}
@@ -70,6 +71,7 @@ class RoutesManager extends React.Component {
               listClients={data ? data.clients : []}
               lang={lang}
               width={width}
+              user={user}
               {...props}
             />
           )}
@@ -80,9 +82,10 @@ class RoutesManager extends React.Component {
           render={props => (
             <ReceivedInvoices
               data={data ? data.receivedInvoices : []}
-              listSuppliers={data ? data.listSuppliers : []}
+              listSuppliers={data ? data.suppliers : []}
               lang={lang}
               width={width}
+              user={user}
               {...props}
             />
           )}
@@ -93,9 +96,10 @@ class RoutesManager extends React.Component {
           render={props => (
             <ReceivedInvoices
               data={data ? data.receivedInvoices : []}
-              listSuppliers={data ? data.listSuppliers : []}
+              listSuppliers={data ? data.suppliers : []}
               lang={lang}
               width={width}
+              user={user}
               {...props}
             />
           )}

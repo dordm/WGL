@@ -3,40 +3,25 @@ import langConf from "../js/lang";
 import styled from "styled-components";
 import "../js/API";
 import ListItem from "@material-ui/core/ListItem";
-import Avatar from "@material-ui/core/Avatar";
-import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import {
   StyledChip,
   ListSuppliers,
-  StyledDownloadIcon,
   DivWrapper,
-  StyledSupplier
+  StyledSupplier,
+    ShowIcon,
+    TypoLastInvoice
 } from "../Components/StyledComponents";
-import Visibility from "@material-ui/icons/Visibility";
 import { Link } from "react-router-dom";
 import { notifySetScreen } from "../Components/NavBar";
 import * as Sentry from "@sentry/browser";
 
-const ShowIcon = styled(Visibility)`
-  color: #4c84ff !important;
-  height: 20px !important;
-  width: 20px !important;
+const DivTitle = styled.div`
   margin-left: ${props =>
-    props.direction === "rtl" ? "-8px" : "4px"} !important;
+    props.direction === "rtl" ? "0px" : "8px"} !important;
   margin-right: ${props =>
-    props.direction === "rtl" ? "4px" : "-8px"} !important;
-`;
-
-const TypoLastInvoice = styled(Typography)`
-  text-align: center;
-  margin-top: 8px !important;
-  margin-bottom: -8px !important;
-  font-family: Arial !important;
-  font-weight: bold !important;
-  font-size: 14px !important;
+    props.direction === "rtl" ? "8px" : "0px"} !important;
 `;
 
 class MySuppliers extends React.Component {
@@ -54,6 +39,14 @@ class MySuppliers extends React.Component {
     });
   }
 
+  getAddr(country, city, street) {
+    let res = "";
+    res += country || "";
+    res += city ? (res ? `, ${city}` : city) : "";
+    res += street ? (res ? `, ${street}` : street) : "";
+    return res;
+  }
+
   render() {
     const { lang, data } = this.props;
     return (
@@ -62,85 +55,61 @@ class MySuppliers extends React.Component {
           {data.map((item, idx) => (
             <StyledSupplier key={idx}>
               <ListItem>
-                <Avatar
-                  imgProps={{
-                    style: {
-                      objectFit: "contain"
-                    }
-                  }}
-                  onError={e => {
-                    e.target.onerror = null;
-                    e.target.src = "";
-                  }}
-                  alt="logo"
-                  src={item.logo}
-                />
-                <ListItemText
-                  primary={
-                    <Typography
-                      style={{ textAlign: langConf[lang].right }}
-                      className={"fontStyle24"}
-                    >
-                      {item.name}
-                    </Typography>
-                  }
-                  secondary={
+                <DivTitle direction={langConf[lang].direction}>
+                  <Typography
+                    style={{ textAlign: langConf[lang].right }}
+                    className={"fontStyle24"}
+                  >
+                    {item.vendorName}
+                  </Typography>
+                  {item.vendorMobile ? (
                     <Typography
                       style={{ textAlign: langConf[lang].right }}
                       className={"fontStyle7"}
                     >
-                      {item.desc}
+                      {langConf[lang].phone + ": " + item.vendorMobile}
                     </Typography>
-                  }
-                />
+                  ) : (
+                    ""
+                  )}
+                  {item.vendorEmail ? (
+                    <Typography
+                      style={{ textAlign: langConf[lang].right }}
+                      className={"fontStyle7"}
+                    >
+                      {langConf[lang].email + ": " + item.vendorEmail}
+                    </Typography>
+                  ) : (
+                    ""
+                  )}
+                  {item.vendorCountry ||
+                  item.vendorCity ||
+                  item.vendorStreet ? (
+                    <Typography
+                      style={{ textAlign: langConf[lang].right }}
+                      className={"fontStyle7"}
+                    >
+                      {langConf[lang].address +
+                        ": " +
+                        this.getAddr(
+                          item.vendorCountry,
+                          item.vendorCity,
+                          item.vendorStreet
+                        )}
+                    </Typography>
+                  ) : (
+                    ""
+                  )}
+                </DivTitle>
               </ListItem>
-              {item.lastInvoice ? (
+              {item.lastInvoiceDate ? (
                 <div>
                   <Divider />
                   <TypoLastInvoice>
-                    {langConf[lang].lastInvoice}
+                    {langConf[lang].lastInvoiceDate +
+                      item.lastInvoiceDate.substr(0, 10)}
                   </TypoLastInvoice>
-                  <ListItem>
-                    <ListItemText
-                      style={{
-                        paddingLeft:
-                          langConf[lang].direction === "rtl" ? "20px" : "unset",
-                        paddingRight:
-                          langConf[lang].direction === "ltr" ? "20px" : "unset",
-                        marginRight:
-                          langConf[lang].direction === "rtl" ? "-16px" : "unset"
-                      }}
-                      primary={
-                        <Typography
-                          style={{ textAlign: langConf[lang].right }}
-                          className={"fontStyle5"}
-                        >
-                          {item.lastInvoice.name}
-                        </Typography>
-                      }
-                      secondary={
-                        <Typography
-                          style={{ textAlign: langConf[lang].right }}
-                          className={"fontStyle11"}
-                        >
-                          {langConf[lang].invoiceAmount +
-                            item.lastInvoice.amount}
-                        </Typography>
-                      }
-                    />
-                    <ListItemSecondaryAction
-                      style={{
-                        left:
-                          langConf[lang].direction === "rtl" ? "8px" : "unset",
-                        right:
-                          langConf[lang].direction === "ltr" ? "8px" : "unset",
-                        padding: 0
-                      }}
-                    >
-                      <StyledDownloadIcon />
-                    </ListItemSecondaryAction>
-                  </ListItem>
-                  <ListItem style={{ justifyContent: "center" }}>
+                  <ListItem style={{ justifyContent: "center", marginTop:8 }}>
                     <StyledChip
                       type={"info"}
                       icon={<ShowIcon direction={langConf[lang].direction} />}
@@ -149,7 +118,7 @@ class MySuppliers extends React.Component {
                         notifySetScreen(langConf[lang].receivedInvoices);
                       }}
                       component={Link}
-                      to={"/receivedInvoices/" + item.id}
+                      to={"/receivedInvoices/" + item.vendorNumber}
                       variant={"outlined"}
                     />
                   </ListItem>

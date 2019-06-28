@@ -237,7 +237,7 @@ class Login extends Component {
   signIn() {
     const { lang } = this.state;
     this.setState({ err: "", loading: true });
-    const username = this.state.username.trim().toLowerCase();
+    const username = this.state.username.trim();
     Auth.signIn(username, this.state.password)
       .then(user => {
         if (user.challengeName === "NEW_PASSWORD_REQUIRED") {

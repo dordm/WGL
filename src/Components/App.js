@@ -22,16 +22,6 @@ Amplify.configure({
   }
 });
 
-export const updateClients = clients => {
-  updateClientsData(clients);
-};
-
-function updateClientsData(clients) {
-  const data = JSON.parse(JSON.stringify(this.state.data));
-  data.clients = clients;
-  this.setState({ data });
-}
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -42,7 +32,7 @@ class App extends Component {
       loading: true
     };
 
-    updateClientsData = updateClientsData.bind(this);
+    // updateClientsData = updateClientsData.bind(this);
     this.updateDimensions = this.updateDimensions.bind(this);
   }
 
@@ -63,7 +53,6 @@ class App extends Component {
           user.attributes["custom:countryCode"],
           user.attributes["custom:id"]
         ).then(res => {
-          console.log(res);
           this.setState({ data: res, loading: false });
         });
         this.setState({ user });

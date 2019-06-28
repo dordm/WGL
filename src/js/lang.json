@@ -54,7 +54,14 @@
     "logout": "Logout",
     "country": "Country",
     "emailInvalid": "Email is not valid",
-    "idInvalid": "Company Id is not valid"
+    "idInvalid": "Company Id is not valid",
+    "lastInvoiceDate": "Last invoice date: ",
+    "address": "Address",
+    "invoiceDate": "Invoice Date",
+    "taxAmount": "Tax Amount",
+    "openAmount": "Open Amount",
+    "clientName": "Client name",
+    "lastInvoices": "Last Invoices"
   },
   "hebrew":{
     "right": "right",
@@ -111,6 +118,13 @@
     "logout": "התנתק",
     "country": "מדינה",
     "emailInvalid": "אימייל אינו תקין",
-    "idInvalid": "ת.ז. / ח.פ. אינו תקין"
+    "idInvalid": "ת.ז. / ח.פ. אינו תקין",
+    "lastInvoiceDate": "תאריך חשבונית אחרונה: ",
+    "address": "כתובת",
+    "invoiceDate": "תאריך חשבונית",
+    "taxAmount": "סכום מעמ",
+    "openAmount": "סכום פתוח",
+    "clientName": "שם לקוח",
+    "lastInvoices": "חשבוניות אחרונות"
   }
 }
