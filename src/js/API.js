@@ -32,7 +32,7 @@ window.AppApi = {
       .get(url)
       .then(response => response.data)
       .catch(err => {
-        return null;
+        return [];
       });
   },
 
@@ -54,7 +54,7 @@ window.AppApi = {
       .get(url)
       .then(response => response.data)
       .catch(err => {
-        return null;
+        return [];
       });
   },
 
@@ -65,7 +65,7 @@ window.AppApi = {
       .get(url)
       .then(response => response.data)
       .catch(err => {
-        return null;
+        return [];
       });
   },
 
@@ -76,7 +76,7 @@ window.AppApi = {
       .get(url)
       .then(response => response.data)
       .catch(err => {
-        return null;
+        return [];
       });
   },
 
@@ -87,7 +87,7 @@ window.AppApi = {
       .get(url)
       .then(response => response.data)
       .catch(err => {
-        return null;
+        return [];
       });
   },
 
@@ -98,7 +98,7 @@ window.AppApi = {
       .get(url)
       .then(response => response.data)
       .catch(err => {
-        return null;
+        return [];
       });
   }
 };

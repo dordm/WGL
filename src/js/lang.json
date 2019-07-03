@@ -61,7 +61,9 @@
     "taxAmount": "Tax Amount",
     "openAmount": "Open Amount",
     "clientName": "Client name",
-    "lastInvoices": "Last Invoices"
+    "lastInvoices": "Last Invoices",
+    "inviteUser": "Invite User",
+    "invite": "Invite"
   },
   "hebrew":{
     "right": "right",
@@ -125,6 +127,8 @@
     "taxAmount": "סכום מעמ",
     "openAmount": "סכום פתוח",
     "clientName": "שם לקוח",
-    "lastInvoices": "חשבוניות אחרונות"
+    "lastInvoices": "חשבוניות אחרונות",
+    "inviteUser": "הזמן משתמש",
+    "invite": "הזמן"
   }
 }

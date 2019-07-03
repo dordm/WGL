@@ -25,8 +25,21 @@ import InvoiceIcon from "@material-ui/icons/Receipt";
 import ReceiveIcon from "@material-ui/icons/Archive";
 import ClientsIcon from "@material-ui/icons/Contacts";
 import SuppliersIcon from "@material-ui/icons/GroupWork";
+import InviteIcon from "@material-ui/icons/InsertInvitation";
 import { Link } from "react-router-dom";
 import { Auth } from "aws-amplify/lib/index";
+import classNames from "classnames";
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import { showSnackbar } from "./CustomizedSnackbar";
+import {
+  MyButton,
+  StyledCloseIcon,
+  StyledDialogContent,
+  StyledTxtFld,
+  StyledDivBtns,
+  ButtonCancel
+} from "../Components/StyledComponents";
 
 const Logo = styled.img`
   height: 50px;
@@ -76,6 +89,13 @@ const styles = theme => ({
     flexGrow: 1,
     padding: 16,
     marginTop: 60
+  },
+  labelTxt: {
+    right: 0,
+    transform: "translate(0, 0px) scale(1)"
+  },
+  rtlDir: {
+    direction: "rtl"
   }
 });
 
@@ -95,7 +115,9 @@ class NavBar extends React.Component {
     this.state = {
       mobileOpen: false,
       lang: localStorage.getItem("language") || "hebrew",
-      screen: ""
+      screen: "",
+      inviteOpen: false,
+      email: ""
     };
 
     setScreenNotify = setScreenNotify.bind(this);
@@ -129,6 +151,99 @@ class NavBar extends React.Component {
     Auth.signOut()
       .then(data => {})
       .catch(err => {});
+  }
+
+  renderInput(stateParam, label) {
+    const { lang } = this.state;
+    const { width, classes } = this.props;
+
+    return (
+      <StyledTxtFld
+        onChange={e => this.setState({ [stateParam]: e.target.value })}
+        width={width}
+        value={this.state[stateParam]}
+        id={label}
+        label={langConf[lang][label]}
+        InputProps={{
+          classes: {
+            input: "fontStyle5",
+            root:
+              langConf[lang].direction === "rtl" ? classes.rtlDir : undefined
+          }
+        }}
+        InputLabelProps={{
+          classes: {
+            root: classNames(
+              "fontStyle4",
+              langConf[lang].direction === "rtl" ? classes.labelTxt : undefined
+            )
+          }
+        }}
+      />
+    );
+  }
+
+  renderInviteDialog() {
+    const { inviteOpen, email, lang } = this.state;
+    const { width } = this.props;
+    return (
+      <Dialog
+        open={inviteOpen}
+        onClose={() => this.setState({ inviteOpen: false })}
+        PaperProps={{
+          style: {
+            margin: 16
+          }
+        }}
+      >
+        <StyledCloseIcon onClick={() => this.setState({ inviteOpen: false })}>
+          <img alt="Close" src={require("../images/Close.png")} />
+        </StyledCloseIcon>
+        <DialogTitle
+          style={{ textAlign: "center", marginTop: 24, paddingBottom: 8 }}
+        >
+          {langConf[lang].inviteUser}
+        </DialogTitle>
+        <StyledDialogContent width={width} direction={langConf[lang].direction}>
+          {this.renderInput("email", "email")}
+          <StyledDivBtns>
+            <div style={{ width: "50%", marginRight: 10, textAlign: "right" }}>
+              <ButtonCancel
+                style={{ position: "initial" }}
+                onClick={() => this.setState({ inviteOpen: false })}
+                className={"fontStyle1"}
+              >
+                {langConf[lang].cancel}
+              </ButtonCancel>
+            </div>
+            <MyButton
+              onClick={() => this.inviteUser()}
+              disabled={!email}
+              style={{ justifySelf: "right" }}
+              width={90}
+              height={36}
+            >
+              {langConf[lang].invite}
+            </MyButton>
+          </StyledDivBtns>
+        </StyledDialogContent>
+      </Dialog>
+    );
+  }
+
+  validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  inviteUser() {
+    const { email, lang } = this.state;
+    if (this.validateEmail(email)) {
+      this.setState({ inviteOpen: false });
+      //todo: add user invite
+    } else {
+      showSnackbar("error", langConf[lang].emailInvalid);
+    }
   }
 
   render() {
@@ -228,22 +343,32 @@ class NavBar extends React.Component {
               primary={langConf[lang].myClients}
             />
           </ListItem>
-            <ListItem
-                onClick={() =>
-                    this.logout()
-                }
-                component={Link}
-                to={"/"}
-                button
-            >
-                <ListItemIcon>
-                    <img src={require('../images/logout.svg')} alt={"logout"}/>
-                </ListItemIcon>
-                <ListItemText
-                    style={{ textAlign: langConf[lang].right }}
-                    primary={langConf[lang].logout}
-                />
-            </ListItem>
+          <ListItem
+            onClick={() => this.setState({ inviteOpen: true, email: "" })}
+            button
+          >
+            <ListItemIcon>
+              <InviteIcon />
+            </ListItemIcon>
+            <ListItemText
+              style={{ textAlign: langConf[lang].right }}
+              primary={langConf[lang].inviteUser}
+            />
+          </ListItem>
+          <ListItem
+            onClick={() => this.logout()}
+            component={Link}
+            to={"/"}
+            button
+          >
+            <ListItemIcon>
+              <img src={require("../images/logout.svg")} alt={"logout"} />
+            </ListItemIcon>
+            <ListItemText
+              style={{ textAlign: langConf[lang].right }}
+              primary={langConf[lang].logout}
+            />
+          </ListItem>
         </List>
       </div>
     );
@@ -351,6 +476,7 @@ class NavBar extends React.Component {
           <div className={classes.toolbar} />
           <RoutesManager width={width} lang={lang} data={data} user={user} />
         </main>
+        {this.renderInviteDialog()}
       </div>
     );
   }

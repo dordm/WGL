@@ -5,8 +5,8 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import { Auth } from "aws-amplify";
 import { MyButton } from "../Components/StyledComponents";
-import { showSnackbar } from "../Components/CustomizedSnackbar";
-import CustomizedSnackbar from "../Components/CustomizedSnackbar";
+import { showSnackbar } from "../Components/CustomizedSnackbarLogin";
+import CustomizedSnackbar from "../Components/CustomizedSnackbarLogin";
 import Loader from "../Components/Loader";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
@@ -552,7 +552,6 @@ class Login extends Component {
     return (
       <StyledLeftDiv width={width}>
         <div>
-          <CustomizedSnackbar />
           <StyledTitle width={width} className={"fontStyle34"}>
             {langConf[lang].signup}
           </StyledTitle>
@@ -698,7 +697,6 @@ class Login extends Component {
     return (
       <StyledLeftDiv width={width}>
         <div style={{ marginTop: -20 }}>
-          <CustomizedSnackbar />
           <StyledTitle width={width} className={"fontStyle34"}>
             {langConf[lang].verifySignup}
           </StyledTitle>
@@ -1098,8 +1096,8 @@ class Login extends Component {
               {width > 1050 ? <div className={classes.rightDiv} /> : ""}
             </div>
           )}
-          <CustomizedSnackbar />
           <Loader size={50} open={loading} />
+          <CustomizedSnackbar />
         </div>
       </BrowserRouter>
     );
