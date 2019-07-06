@@ -25,7 +25,7 @@ import InvoiceIcon from "@material-ui/icons/Receipt";
 import ReceiveIcon from "@material-ui/icons/Archive";
 import ClientsIcon from "@material-ui/icons/Contacts";
 import SuppliersIcon from "@material-ui/icons/GroupWork";
-import InviteIcon from "@material-ui/icons/InsertInvitation";
+import InviteIcon from "@material-ui/icons/Add";
 import { Link } from "react-router-dom";
 import { Auth } from "aws-amplify/lib/index";
 import classNames from "classnames";
@@ -40,6 +40,7 @@ import {
   StyledDivBtns,
   ButtonCancel
 } from "../Components/StyledComponents";
+import { setLoading } from "./App";
 
 const Logo = styled.img`
   height: 50px;
@@ -238,9 +239,25 @@ class NavBar extends React.Component {
 
   inviteUser() {
     const { email, lang } = this.state;
-    if (this.validateEmail(email)) {
-      this.setState({ inviteOpen: false });
-      //todo: add user invite
+    const { user } = this.props;
+    const trimEmail = email.trim();
+    if (this.validateEmail(trimEmail)) {
+      setLoading(true);
+      window.AppApi.postUserInvite(
+        user.attributes["custom:countryCode"],
+        user.attributes["custom:id"],
+        user.username,
+        trimEmail,
+        ""
+      )
+        .then(res => {
+          setLoading(false);
+          this.setState({ inviteOpen: false });
+          showSnackbar("success", langConf[lang].inviteSent);
+        })
+        .catch(err => {
+          setLoading(true);
+        });
     } else {
       showSnackbar("error", langConf[lang].emailInvalid);
     }

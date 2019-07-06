@@ -8,7 +8,7 @@ import NavBar from "./NavBar";
 import "../js/API";
 import Loader from "./Loader";
 import * as Sentry from "@sentry/browser";
-import CustomizedSnackbar from './CustomizedSnackbar';
+import CustomizedSnackbar from "./CustomizedSnackbar";
 
 Sentry.init({
   dsn: "https://2d1a0679c2a243feb0105fad407a4a69@sentry.io/1467358"
@@ -23,6 +23,12 @@ Amplify.configure({
   }
 });
 
+export function setLoading(val) {
+  this.setState({
+    loading: val
+  });
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -34,6 +40,7 @@ class App extends Component {
     };
 
     this.updateDimensions = this.updateDimensions.bind(this);
+    setLoading = setLoading.bind(this);
   }
 
   updateDimensions() {
@@ -69,7 +76,7 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-            <CustomizedSnackbar />
+          <CustomizedSnackbar />
           <div>
             <Loader size={50} open={loading} />
             <NavBar width={width} data={data} user={user} />

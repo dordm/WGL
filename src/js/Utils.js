@@ -6,6 +6,14 @@ class Utils {
   static getCountryCode(country) {
     return countriesDict[country];
   }
+
+  static getCountryName(code) {
+    const entries = Object.entries(countriesDict);
+    for (let i = 0; i < entries.length; i++) {
+      const entry = entries[i];
+      if (entry[1] === code) return entry[0];
+    }
+  }
 }
 
 let countriesDict = {

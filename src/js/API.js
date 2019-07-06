@@ -36,8 +36,20 @@ window.AppApi = {
       });
   },
 
-  async postBusinessData(data) {
-    const url = baseUrl + `BusinessData`;
+  // async postBusinessData(data) {
+  //   const url = baseUrl + `BusinessData`;
+  //   return await axios
+  //     .post(url, JSON.stringify(data), {
+  //       headers: { "Content-Type": "application/json" }
+  //     })
+  //     .then(response => response.data)
+  //     .catch(err => {
+  //       return null;
+  //     });
+  // },
+
+  async postUserData(data) {
+    const url = baseUrl + `UsersData`;
     return await axios
       .post(url, JSON.stringify(data), {
         headers: { "Content-Type": "application/json" }
@@ -92,13 +104,49 @@ window.AppApi = {
   },
 
   async getCustomerInvoicesList(countryCode, id, custNumber) {
-    const url =
-      baseUrl + `customerinvoices/${countryCode}/${id}/${custNumber}`;
+    const url = baseUrl + `customerinvoices/${countryCode}/${id}/${custNumber}`;
     return await axios
       .get(url)
       .then(response => response.data)
       .catch(err => {
         return [];
+      });
+  },
+
+  async postUserInvite(
+    countryCode,
+    id,
+    inviterUserName,
+    invitedUserEmail,
+    invitedUserMobile
+  ) {
+    const url = baseUrl + `userinvites`;
+    const data = {
+      countryCode,
+      businessTaxNumber: id,
+      inviterUserName,
+      invitedUserEmail,
+      invitedUserMobile,
+      inviterMessege: "",
+      inviteTime: new Date()
+    };
+    return await axios
+      .post(url, JSON.stringify(data), {
+        headers: { "Content-Type": "application/json" }
+      })
+      .then(response => response.data)
+      .catch(err => {
+        return null;
+      });
+  },
+
+  async getUserInvites(recNo) {
+    const url = baseUrl + `userinvites/${recNo}`;
+    return await axios
+      .get(url)
+      .then(response => response.data)
+      .catch(err => {
+        return null;
       });
   }
 };

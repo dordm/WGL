@@ -54,6 +54,7 @@
     "logout": "Logout",
     "country": "Country",
     "emailInvalid": "Email is not valid",
+    "phoneInvalid": "Phone is not valid",
     "idInvalid": "Company Id is not valid",
     "lastInvoiceDate": "Last invoice date: ",
     "address": "Address",
@@ -63,9 +64,11 @@
     "clientName": "Client name",
     "lastInvoices": "Last Invoices",
     "inviteUser": "Invite User",
-    "invite": "Invite"
+    "invite": "Invite",
+    "inviteSent": "Invite sent successfully",
+    "inviteNotFound": "Invite not found for this user"
   },
-  "hebrew":{
+  "hebrew": {
     "right": "right",
     "loginToSystem": "כניסה למערכת",
     "username": "שם משתמש",
@@ -129,6 +132,9 @@
     "clientName": "שם לקוח",
     "lastInvoices": "חשבוניות אחרונות",
     "inviteUser": "הזמן משתמש",
-    "invite": "הזמן"
+    "invite": "הזמן",
+    "inviteSent": "ההזמנה נשלחה בהצלחה",
+    "inviteNotFound": "לא נמצאה הזמנה למשתמש זה",
+    "phoneInvalid": "טלפון אינו תקין"
   }
 }

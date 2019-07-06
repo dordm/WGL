@@ -168,8 +168,9 @@ class Login extends Component {
       forgotPwdStatus: "sendCode",
       code: "",
       email: "",
-      country: "",
+      phone: "",
       countryCode: "",
+      user: null,
       id: "",
       confirmPassword: "",
       username: "",
@@ -212,26 +213,27 @@ class Login extends Component {
       window.location.pathname === "/signup" &&
       this.props.authState !== "signUp"
     ) {
-      localStorage.clear();
-      this.props.onStateChange("signUp");
+      this.doOnSignupUrl();
     }
+  }
+
+  doOnSignupUrl() {
+    localStorage.clear();
+    this.props.onStateChange("signUp");
+    const recNo = window.location.search.replace("?recNo=", "");
+    this.setState({ recNo });
   }
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
     if (window.location.pathname === "/signup") {
-      localStorage.clear();
-      this.props.onStateChange("signUp");
+      console.log(window.location);
+      this.doOnSignupUrl();
     }
     if (window.location.pathname === "/signin") {
       localStorage.clear();
       this.props.onStateChange("signIn");
     }
-
-    this.setState({
-      country: this.state.lang === "hebrew" ? "Israel" : "United States",
-      countryCode: this.state.lang === "hebrew" ? "972" : "1"
-    });
   }
 
   signIn() {
@@ -333,53 +335,83 @@ class Login extends Component {
     return re.test(String(email).toLowerCase());
   }
 
+  validatePhone(phone) {
+    if (phone.length < 9) return false;
+    for (let i = 0; i < phone.length; i++) {
+      if (phone[i] < "0" || phone[i] > "9") return false;
+    }
+
+    return true;
+  }
+
   signUp() {
     const { lang } = this.state;
     this.setState({ err: "", loading: true });
-    const password = this.state.password;
-    const username = this.state.username.trim();
-    const id = this.state.id.trim();
-    const country = this.state.country;
-    const countryCode = this.state.countryCode;
-    const email = this.state.email.trim();
+    let { password, username, email, phone, recNo } = this.state;
+    username = username.trim();
+    email = email.trim().toLowerCase();
+    phone = phone;
     const emailValidation = this.validateEmail(email);
-    if (id === "")
-      this.setState({ err: langConf[lang].idInvalid, loading: false });
-    else if (!emailValidation)
+    const phoneValidation = this.validatePhone(phone);
+    if (!emailValidation)
       this.setState({ err: langConf[lang].emailInvalid, loading: false });
+    else if (!phoneValidation)
+      this.setState({ err: langConf[lang].phoneInvalid, loading: false });
     else {
-      Auth.signUp({
-        username: username,
-        password,
-        attributes: {
-          email: email,
-          "custom:country": country,
-          "custom:id": id,
-          "custom:countryCode": countryCode
+      //todo: get user invites api and check validity, also set country, countryCode and id from api results
+      window.AppApi.getUserInvites(recNo).then(res => {
+        if (
+          res &&
+          res.invitedUserEmail &&
+          res.invitedUserEmail.toLowerCase() === email
+        ) {
+          let countryCode = res.countryCode,
+            country = Utils.getCountryName(res.countryCode),
+            id = res.businessTaxNumber;
+          console.log(country);
+          Auth.signUp({
+            username: username,
+            password,
+            attributes: {
+              email: email,
+              "custom:country": country,
+              "custom:id": id,
+              "custom:countryCode": countryCode,
+              "custom:userRole": "2",
+              "custom:phone": phone
+            }
+          })
+            .then(data => {
+              this.setState({
+                password: "",
+                user: data,
+                email,
+                username,
+                err: "",
+                loading: false,
+                country,
+                countryCode,
+                id
+              });
+              showSnackbar("info", langConf[lang].verifyUserCreation);
+              this.props.onStateChange("verifyContact");
+            })
+            .catch(err => {
+              const error = err.message != null ? err.message : err;
+              this.setState({
+                err:
+                  error !==
+                  "1 validation error detected: Value at 'password' failed to satisfy constraint: Member must have length greater than or equal to 6"
+                    ? error
+                    : "",
+                loading: false
+              });
+            });
+        } else {
+          this.setState({ loading: false });
+          showSnackbar("warning", langConf[lang].inviteNotFound);
         }
-      })
-        .then(data => {
-          this.setState({
-            password: "",
-            email,
-            username,
-            err: "",
-            loading: false
-          });
-          showSnackbar("info", langConf[lang].verifyUserCreation);
-          this.props.onStateChange("verifyContact");
-        })
-        .catch(err => {
-          const error = err.message != null ? err.message : err;
-          this.setState({
-            err:
-              error !==
-              "1 validation error detected: Value at 'password' failed to satisfy constraint: Member must have length greater than or equal to 6"
-                ? error
-                : "",
-            loading: false
-          });
-        });
+      });
     }
   }
 
@@ -399,37 +431,6 @@ class Login extends Component {
       [stateParameter]: val,
       signUpValidation: validations
     });
-  }
-
-  renderNumberInput(label, stateParameter) {
-    const { lang } = this.state;
-    return (
-      <StyledTxtFld
-        onChange={e => this.setState({ [stateParameter]: e.target.value })}
-        className={"fontStyle5"}
-        width={this.state.width}
-        value={this.state[stateParameter]}
-        id={label}
-        label={label}
-        type={"text"}
-        InputProps={{
-          classes: {
-            input: "fontStyle5"
-          },
-          inputComponent: NumberFormatCustom
-        }}
-        InputLabelProps={{
-          classes: {
-            root: classNames(
-              "fontStyle4",
-              langConf[lang].direction === "rtl"
-                ? this.props.classes.txtFldLbl
-                : {}
-            )
-          }
-        }}
-      />
-    );
   }
 
   renderInput(label, stateParameter, fieldType, showPwdFldName = "") {
@@ -565,46 +566,7 @@ class Login extends Component {
               "text"
             )}
             {this.renderInput(langConf[lang].email + " *", "email", "text")}
-            {this.renderNumberInput(langConf[lang].compHP + " *", "id")}
-            <FormControl style={{ marginBottom: 8 }}>
-              <StyledInputLabel
-                direction={langConf[lang].direction}
-                className={"fontStyle4"}
-                htmlFor="country"
-              >
-                {langConf[lang].country + " *"}
-              </StyledInputLabel>
-              <StyledSelect
-                value={country}
-                width={width}
-                className={"fontStyle5"}
-                input={<Input id="country" name={"country"} />}
-                onChange={e =>
-                  this.setState({
-                    country: e.target.value,
-                    countryCode: Utils.getCountryCode(e.target.value)
-                  })
-                }
-                inputprops={{
-                  id: "country",
-                  classes: {
-                    input: "fontStyle5"
-                  }
-                }}
-                classes={{
-                  select:
-                    langConf[lang].direction === "rtl" ? "selectTextRtl" : "",
-                  icon:
-                    langConf[lang].direction === "rtl" ? "selectArrowRtl" : ""
-                }}
-              >
-                {Utils.getCountries().map(country => (
-                  <MenuItem key={country} value={country}>
-                    {country}
-                  </MenuItem>
-                ))}
-              </StyledSelect>
-            </FormControl>
+            {this.renderInput(langConf[lang].phone + " *", "phone", "text")}
             {this.renderPasswordInput(
               langConf[lang].password + " *",
               "password",
@@ -655,24 +617,23 @@ class Login extends Component {
       lang,
       username,
       code,
-      country,
       countryCode,
       email,
-      id
+      id,
+      user,
+      phone
     } = this.state;
     this.setState({ err: "", loading: true });
     Auth.confirmSignUp(username, code, {})
       .then(data => {
-        window.AppApi.postBusinessData({
-          businessCountry: country,
-          businessCity: "",
-          businessEmail: email,
-          businessMobile: "",
-          businessName: username,
-          businessRegion: "",
-          businessStreet: "",
+        window.AppApi.postUserData({
+          userEmail: email,
+          userMobile: phone,
+          userName: username,
+          userRole: 2,
           businessTaxNumber: id,
-          countryCode: countryCode
+          countryCode: countryCode,
+          userId: user.userSub
         }).then(res => {
           this.setState({
             code: "",
