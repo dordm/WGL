@@ -350,7 +350,6 @@ class Login extends Component {
     let { password, username, email, phone, recNo } = this.state;
     username = username.trim();
     email = email.trim().toLowerCase();
-    phone = phone;
     const emailValidation = this.validateEmail(email);
     const phoneValidation = this.validatePhone(phone);
     if (!emailValidation)
