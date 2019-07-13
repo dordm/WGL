@@ -36,18 +36,6 @@ window.AppApi = {
       });
   },
 
-  // async postBusinessData(data) {
-  //   const url = baseUrl + `BusinessData`;
-  //   return await axios
-  //     .post(url, JSON.stringify(data), {
-  //       headers: { "Content-Type": "application/json" }
-  //     })
-  //     .then(response => response.data)
-  //     .catch(err => {
-  //       return null;
-  //     });
-  // },
-
   async postUserData(data) {
     const url = baseUrl + `UsersData`;
     return await axios

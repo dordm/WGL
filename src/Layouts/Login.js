@@ -227,7 +227,6 @@ class Login extends Component {
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
     if (window.location.pathname === "/signup") {
-      console.log(window.location);
       this.doOnSignupUrl();
     }
     if (window.location.pathname === "/signin") {
@@ -357,7 +356,6 @@ class Login extends Component {
     else if (!phoneValidation)
       this.setState({ err: langConf[lang].phoneInvalid, loading: false });
     else {
-      //todo: get user invites api and check validity, also set country, countryCode and id from api results
       window.AppApi.getUserInvites(recNo).then(res => {
         if (
           res &&
@@ -367,7 +365,6 @@ class Login extends Component {
           let countryCode = res.countryCode,
             country = Utils.getCountryName(res.countryCode),
             id = res.businessTaxNumber;
-          console.log(country);
           Auth.signUp({
             username: username,
             password,
