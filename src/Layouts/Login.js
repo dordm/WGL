@@ -25,7 +25,6 @@ import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import langConf from "../js/lang";
 import Utils from "../js/Utils";
-import NumberFormatCustom from "../Components/NumberFormatCustom";
 import * as Sentry from "@sentry/browser";
 
 const signUpValidations = [
@@ -118,11 +117,6 @@ const LangFormControl = styled(FormControl)`
     props.direction === "ltr" ? (props.width > 600 ? "50%" : "10px") : ""};
   position: absolute !important;
   margin-top: 10px !important;
-`;
-
-const StyledInputLabel = styled(InputLabel)`
-  left: ${props => (props.direction === "rtl" ? "unset" : "")} !important;
-  right: ${props => (props.direction === "rtl" ? "-10px" : "")};
 `;
 
 const styles = {
@@ -545,7 +539,7 @@ class Login extends Component {
 
   signUpLayout() {
     const { classes } = this.props;
-    const { width, displaySignUpValidation, lang, country } = this.state;
+    const { width, displaySignUpValidation, lang } = this.state;
     return (
       <StyledLeftDiv width={width}>
         <div>
